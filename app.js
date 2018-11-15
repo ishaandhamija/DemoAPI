@@ -32,6 +32,24 @@ app.post('/getdata', (req, res) => {
 	}
 })
 
+app.get('/getarraylist', (req, res) => {
+	var arr = []
+	var obj = {}
+	obj.a = "abc"
+	obj.b = {}
+	obj.b.p = "xyz"
+	obj.b.q = []
+	obj.b.q[0] = 'asas'
+	obj.b.q[1] = 'asas'
+	arr[0] = obj
+	arr[1] = obj
+	arr[2] = obj
+	arr[3] = obj
+	arr[4] = obj
+
+	res.send(arr)
+})
+
 app.listen(3030, () => {
 	console.log('Listening to port 3030...')
 })
